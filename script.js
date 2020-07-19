@@ -5,9 +5,12 @@ const todoList = document.querySelector('.todo-list');
 
 //Event listener
 
-todoButton.addEventListener('click',addTodo)
+todoButton.addEventListener('click',addTodo);
+
+
+
 //functions
-function addTodo() {
+function addTodo(event) {
     event.preventDefault();
     const toDiv = document.createElement('div')
     toDiv.classList.add('todo');
@@ -20,13 +23,17 @@ function addTodo() {
 
     const completdButton = document.createElement('button');
     completdButton.innerHTML = '<i class="fa fa-plus"></i>'
-    completdButton.classList('complete-btn');
+    completdButton.classList.add('complete-btn');
     toDiv.append(completdButton);
 
     //delete button
 
     const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = '<i class="fa fa-minus"></i>'
-    deleteButton.classList('complete-btn');
-    toDiv.append(completdButton);
+    deleteButton.innerHTML = '<i class="fa fa-trash"></i>'
+    deleteButton.classList.add('complete-btn');
+    toDiv.append(deleteButton);
+
+    //append to list
+    todoList.append(toDiv);
+
 }
