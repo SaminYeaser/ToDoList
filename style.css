@@ -43,10 +43,11 @@ header h1{
     list-style: none;
 }
 .todo{
+    padding-left: 2rem;
     margin: .5rem;
     background: white;
     color: black;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,4 +60,9 @@ header h1{
     color: white;
     border: none;
     padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.complete-btn{
+    background: green;
 }
