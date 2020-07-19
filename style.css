@@ -43,11 +43,20 @@ header h1{
     list-style: none;
 }
 .todo{
-    margin: 0.5rem;
+    margin: .5rem;
     background: white;
     color: black;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.todo li{
+    flex: 1;
+}
+.complete-btn ,.trash-btn{
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
 }

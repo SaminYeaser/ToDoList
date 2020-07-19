@@ -30,7 +30,7 @@ function addTodo(event) {
 
     const deleteButton = document.createElement('button');
     deleteButton.innerHTML = '<i class="fa fa-trash"></i>'
-    deleteButton.classList.add('complete-btn');
+    deleteButton.classList.add('trash-btn');
     toDiv.append(deleteButton);
 
     //append to list
