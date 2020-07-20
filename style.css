@@ -43,7 +43,7 @@ header h1{
     list-style: none;
 }
 .todo{
-    padding-left: 2rem;
+    padding-left: .5rem;
     margin: .5rem;
     background: white;
     color: black;
@@ -65,4 +65,7 @@ header h1{
 }
 .complete-btn{
     background: green;
+}
+.todo-item{
+    padding: 0rem .5rem;
 }
