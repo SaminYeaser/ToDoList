@@ -69,3 +69,6 @@ header h1{
 .todo-item{
     padding: 0rem .5rem;
 }
+.fa-plus,fa-trash{
+    pointer-events: none;
+}

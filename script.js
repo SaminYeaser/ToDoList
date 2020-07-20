@@ -38,6 +38,14 @@ function addTodo(event) {
     todoInput.value = ''
 
 }
-function deleteTodo() {
-
+function deleteTodo(event) {
+    const item = event.target;
+    if(item.classList[0]==='trash-btn'){
+        const todo = item.parentElement;
+        todo.remove();
+    }
+    if(item.classList[0] === 'complete-btn'){
+        const todo = item.parentElement;
+        todo.classList.toggle('completed')
+    }
 }
