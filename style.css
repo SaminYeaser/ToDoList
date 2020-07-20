@@ -70,10 +70,14 @@ header h1{
 .todo-item{
     padding: 0rem .5rem;
 }
-.fa-plus,fa-trash{
+.fa-plus,.fa-trash{
     pointer-events: none;
 }
 .completed{
     text-decoration: line-through;
     opacity: 0.5;
+}
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
 }
