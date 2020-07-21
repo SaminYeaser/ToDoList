@@ -90,3 +90,38 @@ function saveToLocalStorage(todo){
         localStorage.setItem('todos', JSON.stringify(todos))
 
 }
+function getTodos(){
+    let todos;
+    if(localStorage.getItem('todos') === null){
+        todos = []
+    }else {
+        todos = JSON.parse(localStorage.getItem('todos'))
+    }
+    todos.forEach(function (todo) {
+        const toDiv = document.createElement('div')
+        toDiv.classList.add('todo');
+
+        const newTodo = document.createElement('li');
+        newTodo.innerText = todo;
+        newTodo.classList.add('todo-item');
+        toDiv.append(newTodo);
+
+        //completed button
+
+        const completdButton = document.createElement('button');
+        completdButton.innerHTML = '<i class="fa fa-plus"></i>'
+        completdButton.classList.add('complete-btn');
+        toDiv.append(completdButton);
+
+        //delete button
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="fa fa-trash"></i>'
+        deleteButton.classList.add('trash-btn');
+        toDiv.append(deleteButton);
+
+        //append to list
+        todoList.append(toDiv);
+
+    })
+}
