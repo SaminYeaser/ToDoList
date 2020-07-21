@@ -14,11 +14,13 @@ function addTodo(event) {
     event.preventDefault();
     const toDiv = document.createElement('div')
     toDiv.classList.add('todo');
+
     const newTodo = document.createElement('li');
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     toDiv.append(newTodo);
 
+    saveToLocalStorage(todoInput.value);
     //completed button
 
     const completdButton = document.createElement('button');
@@ -53,6 +55,37 @@ function deleteTodo(event) {
     }
 }
 function filterTodo(event){
-    const todos = todoList.childNodes;
+    const todom = todoList.childNodes;
+    todom.forEach(function (todo) {
+        switch (event.target.value) {
+            case 'all':
+                todo.style.display = 'flex'
+                break
+            case 'completed':
+                if(todo.classList.contains('completed')){
+                    todo.style.display = 'flex';
+                }else{
+                    todo.style.display = 'none';
+                }
+                break
+            case 'uncompleted':
+                if(!todo.classList.contains('completed')){
+                    todo.style.display = 'flex';
+                }else{
+                    todo.style.display = 'none';
+                }
+
+        }
+    });
     console.log(todos)
+}
+function saveToLocalStorage(todo){
+    let todos;
+    if(localStorage.getItem('todos')==='null'){
+        todos = []
+    }else{
+        todos = JSON.parse(localStorage.getItem('todos'))
+        todos.push(todo)
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }
 }
